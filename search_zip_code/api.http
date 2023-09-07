@@ -1,0 +1,2 @@
+POST http://localhost:8080/?cep=13185200
+Content-Type: application/application/json
