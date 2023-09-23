@@ -51,7 +51,50 @@ func main() {
 	fmt.Printf("\nSelect All\n")
 	for _, product := range products {
 		fmt.Println(product)
-
 	}
 
+	// Select two rows
+	var productLimit []Product
+	db.Limit(2).Find(&productLimit)
+	fmt.Printf("\n Select two rows\n")
+	for _, product := range productLimit {
+		fmt.Println(product)
+	}
+
+	// Select with off set
+	var productOffSet []Product
+	db.Limit(4).Offset(2).Find(&productOffSet)
+	fmt.Printf("\n Select Off set\n")
+	for _, product := range productOffSet {
+		fmt.Println(product)
+	}
+
+	// Select with where
+	var productWhere []Product
+	db.Where("price > ?", 100).Find(&productWhere)
+	fmt.Printf("\n Select with where\n")
+	for _, product := range productWhere {
+		fmt.Println(product)
+	}
+
+	// Select with Like
+	var productLike []Product
+	db.Where("name LIKE ?", "%P%").Find(&productLike)
+	fmt.Printf("\n Select with Like\n")
+	for _, product := range productLike {
+		fmt.Println(product)
+	}
+
+	// Update product cod 1
+	var p Product
+	db.First(&p, 1)
+	p.Name = "New Mouse"
+	db.Save(&p)
+
+	var p2 Product
+	db.First(&p2, 1)
+	fmt.Println(p2.Name)
+
+	// Delete item
+	db.Delete(&p2)
 }
