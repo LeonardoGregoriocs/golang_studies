@@ -7,12 +7,12 @@ import (
 )
 
 func TestNewProcuct(t *testing.T) {
-	p, err := NewProduct("Product 1", 10)
+	p, err := NewProduct("Product 1", 10.0)
 	assert.Nil(t, err)                   // Valido que o err é nil
 	assert.NotNil(t, p)                  // Valido que minha váriavel P não é nil
 	assert.NotEmpty(t, p.ID)             // Valido que o ID do produto não é vazio
 	assert.Equal(t, "Product 1", p.Name) // Valido o nome
-	assert.Equal(t, 10, p.Price)         // Valido o preço
+	assert.Equal(t, 10.0, p.Price)       // Valido o preço
 }
 
 func TestProductWhenNameIsRequired(t *testing.T) {
@@ -34,7 +34,7 @@ func TestProductWhenPriceIsInvalid(t *testing.T) {
 }
 
 func TestProductValidate(t *testing.T) {
-	p, err := NewProduct("Product 1", 10)
+	p, err := NewProduct("Product 1", 10.0)
 	assert.Nil(t, err)
 	assert.NotNil(t, p)
 	assert.Nil(t, p.Validate())
