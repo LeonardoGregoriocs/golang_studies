@@ -1,0 +1,8 @@
+Eventos 
+
+- Tudo que aconteceu no passado. 
+
+- Evento (Carregar dados)
+- Operações que serão executadas quando um evento é chamado: 
+    - Registrar os eventos e suas operações. 
+    - Despachar / Fire no evento para suas operações sejam executadas. 
