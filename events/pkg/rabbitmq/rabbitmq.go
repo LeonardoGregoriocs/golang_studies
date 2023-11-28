@@ -33,3 +33,20 @@ func Consume(ch *amqp.Channel, out chan<- amqp.Delivery) error {
 	}
 	return nil
 }
+
+func Publish(ch *amqp.Channel, body string) error {
+	err := ch.Publish(
+		"amq.direct",
+		"",
+		false,
+		false,
+		amqp.Publishing{
+			ContentType: "text/plain",
+			Body:        []byte(body),
+		},
+	)
+	if err != nil {
+		return err
+	}
+	return nil
+}
