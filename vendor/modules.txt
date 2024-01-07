@@ -1,0 +1,5 @@
+# github.com/leonardogregoriocs/fcutils-secret v0.0.0-20231128142705-2b190e23788e
+## explicit; go 1.21.3
+github.com/leonardogregoriocs/fcutils-secret/pkg/events
+# github.com/stretchr/testify v1.8.4
+## explicit; go 1.20
