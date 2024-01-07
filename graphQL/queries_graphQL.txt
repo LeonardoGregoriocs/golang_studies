@@ -21,9 +21,35 @@ query QueryCategories{
   }
 }
 
+query QueryCategoriesWithCourses{
+  categories{
+		id
+    name
+    description
+    courses {
+      id
+      name
+    }
+  }
+}
+
 query QueryCourse{
   courses{
     id
     name
+  }
+}
+
+
+query QueryCourseWithCategory{
+  courses{
+    id
+    name
+    description 
+    category {
+      id
+      name
+      description
+    }
   }
 }
